@@ -398,6 +398,10 @@ body:not(.admin-mode) .admin-only { display: none; }
   overflow: hidden;
   position: relative;
 }
+.camera-img {
+  width: 100%;
+  display: block;
+}
 .camera-img-placeholder {
   width: 100%;
   aspect-ratio: 16/9;
