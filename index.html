@@ -10,6 +10,12 @@
 
 <div class="admin-banner">MODE ORGANITZADORS</div>
 
+<!-- Lightbox (desktop) -->
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
 <!-- Custom Modal -->
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal-box">
@@ -50,7 +56,7 @@
   <div class="mascots">
     <!-- Placeholder: substituir per iframe YouTube quan hi hagi vídeo -->
     <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
-    <img src="img/mascotes.jpg" alt="Els sospitosos" class="mascots-photo">
+    <img src="img/mascotes-sm.jpg" srcset="img/mascotes-sm.jpg 427w, img/mascotes-lg.jpg 800w" sizes="(min-width: 768px) 340px, 90vw" alt="Els sospitosos" class="mascots-photo">
     <p class="mascots-caption"><b>Mel</b> 🦮 · <b>Bruna</b> 🐱 · <b>Brutus</b> 🐶</p>
   </div>
 
@@ -103,16 +109,16 @@
   <div class="cameras-grid">
     <!-- UI order SHUFFLED — NO cronològic! -->
     <div class="camera-card">
-      <img src="img/cam-bruna.jpg" alt="Càmera de seguretat" class="camera-img">
+      <img src="img/cam-bruna-sm.jpg" srcset="img/cam-bruna-sm.jpg 640w, img/cam-bruna-lg.jpg 1200w" sizes="(min-width: 768px) 340px, 90vw" alt="Càmera de seguretat" class="camera-img">
     </div>
     <div class="camera-card">
-      <img src="img/cam-brutus.jpg" alt="Càmera de seguretat" class="camera-img">
+      <img src="img/cam-brutus-sm.jpg" srcset="img/cam-brutus-sm.jpg 640w, img/cam-brutus-lg.jpg 1200w" sizes="(min-width: 768px) 340px, 90vw" alt="Càmera de seguretat" class="camera-img">
     </div>
     <div class="camera-card">
-      <img src="img/cam-numero5.jpg" alt="Càmera de seguretat" class="camera-img">
+      <img src="img/cam-numero5-sm.jpg" srcset="img/cam-numero5-sm.jpg 640w, img/cam-numero5-lg.jpg 1200w" sizes="(min-width: 768px) 340px, 90vw" alt="Càmera de seguretat" class="camera-img">
     </div>
     <div class="camera-card">
-      <img src="img/cam-mel.jpg" alt="Càmera de seguretat" class="camera-img">
+      <img src="img/cam-mel-sm.jpg" srcset="img/cam-mel-sm.jpg 640w, img/cam-mel-lg.jpg 1200w" sizes="(min-width: 768px) 340px, 90vw" alt="Càmera de seguretat" class="camera-img">
     </div>
   </div>
 
@@ -143,9 +149,8 @@
       <h2>L'últim pas</h2>
     </div>
 
-    <div class="camera-card camera-card-final">
-      <div class="camera-img-placeholder camera-final">🔒📷</div>
-      <div class="camera-timestamp">24/04/2026 — 23:55</div>
+    <div class="camera-card" style="max-width:320px;width:100%;">
+      <img src="img/cam-final-sm.jpg" srcset="img/cam-final-sm.jpg 640w, img/cam-final-lg.jpg 1200w" sizes="320px" alt="L'últim pas" class="camera-img">
     </div>
 
     <div class="code-input-section" id="code-input-section">
@@ -188,6 +193,8 @@
     <h2 class="victory-title">Esteu a punt de recuperar el seating plan!!</h2>
     <p class="victory-subtitle" style="font-size:1.1em;">Aneu cap als nuvis i tots junts, a la de 3, crideu ben fort:</p>
     <div class="secret-word">CUQUIS</div>
+    <img src="img/nuvis-final-sm.jpg" srcset="img/nuvis-final-sm.jpg 640w, img/nuvis-final-lg.jpg 1200w" sizes="(min-width: 768px) 450px, 80vw" alt="Els nuvis" class="mascots-photo" style="margin:14px auto 0;display:block;max-width:340px;">
+    <style>@media(min-width:768px){.victory-screen .mascots-photo{max-width:450px!important;}}</style>
     <p class="victory-footer">Gràcies per jugar! ❤️💍</p>
   </div>
 </section>
@@ -498,6 +505,25 @@
       el.style.display = "none";
     });
   }
+
+  // --- Lightbox (desktop only) ---
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxClose = document.getElementById("lightbox-close");
+  const isDesktop = window.matchMedia("(min-width: 768px)");
+
+  document.querySelectorAll(".camera-card .camera-img").forEach(img => {
+    img.addEventListener("click", () => {
+      if (!isDesktop.matches) return;
+      // Use the large version for lightbox
+      lightboxImg.src = img.src.replace("-sm.", "-lg.");
+      lightbox.classList.add("visible");
+    });
+  });
+  lightboxClose.addEventListener("click", () => lightbox.classList.remove("visible"));
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) lightbox.classList.remove("visible");
+  });
 
   // Init
   updateUI();

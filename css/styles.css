@@ -513,11 +513,11 @@ body:not(.admin-mode) .admin-only { display: none; }
 /* ---- VICTORY SCREEN (Section 5) ---- */
 .victory-screen {
   text-align: center;
-  padding: 30px 15px;
+  padding: 15px 15px;
 }
 .victory-icon {
-  font-size: 3.5em;
-  margin-bottom: 12px;
+  font-size: 1.5em;
+  margin-bottom: 6px;
 }
 .victory-title {
   color: #4caf50;
@@ -527,7 +527,7 @@ body:not(.admin-mode) .admin-only { display: none; }
 .victory-subtitle {
   color: #999;
   font-size: 0.9em;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 .secret-word {
   display: inline-block;
@@ -545,7 +545,7 @@ body:not(.admin-mode) .admin-only { display: none; }
 .victory-footer {
   color: #666;
   font-size: 0.85em;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 /* ---- LOCKOUT SCREEN ---- */
@@ -689,8 +689,85 @@ body:not(.admin-mode) .admin-only { display: none; }
 }
 .org-detail b { color: #ddd; }
 
+/* ---- LIGHTBOX (desktop only) ---- */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  cursor: zoom-out;
+}
+.lightbox-overlay.visible { display: flex; }
+.lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
+}
+.lightbox-close {
+  position: fixed;
+  top: 18px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2em;
+  cursor: pointer;
+  z-index: 2001;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.lightbox-close:hover { opacity: 1; }
+
+/* ---- BRIEFCASE PLACEHOLDER (Section 4) ---- */
+.briefcase-placeholder {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4/3;
+  background: linear-gradient(145deg, #1a1a2e 0%, #0f0f1a 100%);
+  border: 2px solid #333;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+.briefcase-icon { font-size: 3.5em; }
+.briefcase-mascots {
+  font-size: 1.4em;
+  letter-spacing: 6px;
+}
+.briefcase-label {
+  font-size: 0.75em;
+  color: #666;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+}
+.briefcase-lock {
+  position: absolute;
+  bottom: 12px;
+  font-size: 1.8em;
+}
+
 /* ---- DESKTOP (wider screens) ---- */
 @media (min-width: 768px) {
+  .cameras-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 700px;
+    gap: 16px;
+  }
+  .camera-card { cursor: zoom-in; }
   .cell {
     width: 30px;
     height: 30px;
@@ -700,14 +777,6 @@ body:not(.admin-mode) .admin-only { display: none; }
     font-size: 7px;
     top: 1px;
     left: 2px;
-  }
-  .cameras-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 500px;
-  }
-  .camera-timestamp {
-    font-size: 0.7em;
   }
   .progress-line {
     width: 40px;
