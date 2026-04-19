@@ -295,9 +295,15 @@
     });
   }
 
-  // Detect admin mode via ?secret=cuqui
+  // Detect admin mode via ?secret=cuquis
   const params = new URLSearchParams(window.location.search);
   const isAdmin = params.get("secret") === "cuquis";
+
+  // Early access gate — remove this block after the wedding
+  if (!isAdmin && !params.has("early_access")) {
+    document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;min-height:100vh;color:#666;font-family:system-ui;text-align:center;padding:20px;"><p style="font-size:1.2em;">Pàgina no disponible</p></div>';
+    throw new Error("early_access required");
+  }
   if (isAdmin) {
     document.body.classList.add("admin-mode");
     try {
