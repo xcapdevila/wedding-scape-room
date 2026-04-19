@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>On és el seating plan? — Casament Xavier & Meritxell</title>
-<link rel="stylesheet" href="crossword-styles.css">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -50,7 +50,7 @@
   <div class="mascots">
     <!-- Placeholder: substituir per iframe YouTube quan hi hagi vídeo -->
     <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
-    <img src="bruna-brutus-mel.png" alt="Els sospitosos" class="mascots-photo">
+    <img src="img/mascotes.jpg" alt="Els sospitosos" class="mascots-photo">
     <p class="mascots-caption"><b>Mel</b> 🦮 · <b>Bruna</b> 🐱 · <b>Brutus</b> 🐶</p>
   </div>
 
@@ -103,20 +103,16 @@
   <div class="cameras-grid">
     <!-- UI order SHUFFLED — NO cronològic! -->
     <div class="camera-card">
-      <img src="security-cam-0004.jpeg" alt="Càmera de seguretat" class="camera-img">
-      <div class="camera-timestamp">24/04/2026 — 23:12</div>
+      <img src="img/cam-bruna.jpg" alt="Càmera de seguretat" class="camera-img">
     </div>
     <div class="camera-card">
-      <img src="security-cam-0023.jpeg" alt="Càmera de seguretat" class="camera-img">
-      <div class="camera-timestamp">24/04/2026 — 22:04</div>
+      <img src="img/cam-brutus.jpg" alt="Càmera de seguretat" class="camera-img">
     </div>
     <div class="camera-card">
-      <img src="security-cam-0015.jpg" alt="Càmera de seguretat" class="camera-img">
-      <div class="camera-timestamp">24/04/2026 — 22:37</div>
+      <img src="img/cam-numero5.jpg" alt="Càmera de seguretat" class="camera-img">
     </div>
     <div class="camera-card">
-      <img src="security-cam-0019.jpeg" alt="Càmera de seguretat" class="camera-img">
-      <div class="camera-timestamp">24/04/2026 — 22:51</div>
+      <img src="img/cam-mel.jpg" alt="Càmera de seguretat" class="camera-img">
     </div>
   </div>
 
@@ -189,7 +185,7 @@
 <section class="game-section" id="step-4">
   <div class="victory-screen">
     <div class="victory-icon">🎉</div>
-    <h2 class="victory-title">Heu recuperat el seating plan!</h2>
+    <h2 class="victory-title">Esteu a punt de recuperar el seating plan!!</h2>
     <p class="victory-subtitle" style="font-size:1.1em;">Aneu cap als nuvis i tots junts, a la de 3, crideu ben fort:</p>
     <div class="secret-word">CUQUIS</div>
     <p class="victory-footer">Gràcies per jugar! ❤️💍</p>
@@ -250,8 +246,8 @@
   </div>
 </div>
 
-<script src="crossword-data.js"></script>
-<script src="crossword-render.js"></script>
+<script src="js/data.js"></script>
+<script src="js/render.js"></script>
 <script>
   const STORAGE_KEY_STEP = "escaperoom-maxstep";
   const STORAGE_KEY_ATTEMPTS = "escaperoom-attempts";
