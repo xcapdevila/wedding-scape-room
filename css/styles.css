@@ -198,6 +198,11 @@ h1 {
 }
 .mascots-link:hover .play-overlay { opacity: 1; }
 
+@media (max-width: 767px) {
+  .mascots-link { pointer-events: none; }
+  .play-overlay { display: none; }
+}
+
 /* ---- CONTINUE BUTTON ---- */
 .btn-continue {
   margin-top: 25px;
