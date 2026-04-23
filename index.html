@@ -78,6 +78,8 @@
   </div>
 
   <a href="#" onclick="openVideo(); return false;" class="btn-video" data-i18n="btnVideo">Veure vídeo ▶</a>
+  <a href="#" onclick="toggleAudio(); return false;" class="btn-video btn-audio" id="btn-audio" data-i18n="btnAudio">Escoltar àudio 🔊</a>
+  <audio id="audio-player" src="audio/bruna-brutus-mel.mp3" preload="none"></audio>
   <button class="btn-continue" onclick="goToStep(1)">Continuar →</button>
 </section>
 
@@ -91,7 +93,7 @@
   <div class="section-header">
     <h2 data-i18n="crosswordTitle">Resoleu els mots encreuats</h2>
   </div>
-  <p class="section-intro" data-i18n="crosswordIntro">Fixeu-vos bé en tots els detalls.</p>
+  <p class="section-intro" data-i18n-html="crosswordIntro">Fixeu-vos bé en tots els detalls. Teniu els mots encreuats en format físic per facilitar-vos la feina. Si us encalleu, premeu 🔍 al costat de cada definició per obtenir una pista.</p>
 
   <div class="controls admin-only">
     <button class="btn" id="btn-toggle-solution" onclick="toggleSolution()">Veure com a jugador</button>
@@ -565,6 +567,22 @@
     videoOverlay.classList.remove("visible");
     videoIframe.src = "";
   }
+
+  // --- Audio player ---
+  const audioPlayer = document.getElementById("audio-player");
+  const btnAudio = document.getElementById("btn-audio");
+  function toggleAudio() {
+    if (audioPlayer.paused) {
+      audioPlayer.play();
+      btnAudio.classList.add("playing");
+    } else {
+      audioPlayer.pause();
+      btnAudio.classList.remove("playing");
+    }
+  }
+  audioPlayer.addEventListener("ended", () => {
+    btnAudio.classList.remove("playing");
+  });
   videoClose.addEventListener("click", closeVideo);
   videoOverlay.addEventListener("click", (e) => {
     if (e.target === videoOverlay) closeVideo();

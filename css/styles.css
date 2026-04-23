@@ -176,6 +176,18 @@ h1 {
 .btn-video:hover, .btn-video:active {
   background: #5a4bd1;
 }
+.btn-audio {
+  background: #00b894;
+}
+.btn-audio:hover, .btn-audio:active {
+  background: #00a381;
+}
+.btn-audio.playing {
+  background: #e17055;
+}
+.btn-audio.playing:hover, .btn-audio.playing:active {
+  background: #c85a42;
+}
 
 /* ---- MASCOTS PLAY OVERLAY ---- */
 .mascots-link {

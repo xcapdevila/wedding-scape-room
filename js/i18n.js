@@ -9,6 +9,7 @@ const I18N = {
     subtitle: "Casament Xavier & Meritxell · 25 d'abril de 2026",
     btnContinue: "Continuar →",
     btnVideo: "Veure vídeo ▶",
+    btnAudio: "Escoltar àudio 🔊",
     btnReset: "Tornar a començar",
     adminBanner: "MODE ORGANITZADORS",
     pageUnavailable: "Pàgina no disponible",
@@ -18,7 +19,7 @@ const I18N = {
 
     // Section 2
     crosswordTitle: "Resoleu els mots encreuats",
-    crosswordIntro: "Fixeu-vos bé en tots els detalls.",
+    crosswordIntro: "Fixeu-vos bé en tots els detalls. Teniu els mots encreuats en format físic per facilitar-vos la feina. Si us encalleu, premeu 🔍 al costat de cada definició per obtenir una pista.",
     cluesHorizontal: "HORITZONTALS",
     cluesVertical: "VERTICALS",
     legendGreen: "Verd",
@@ -47,7 +48,7 @@ const I18N = {
     victoryFooter: "Gràcies per jugar! ❤️💍",
 
     // Modals
-    confirmStep1: "Ja heu vist el vídeo que us han deixat els sospitosos?",
+    confirmStep1: "Ja heu escoltat o vist el missatge que us han deixat els sospitosos?",
     confirmStep2: "Heu acabat els mots encreuats i sabeu què amaguen les caselles de color?",
     confirmStep3: "Us heu fixat bé en tots els detalls de les càmeres? Ja sabeu què mostren?",
     confirmReset: "Segur que voleu tornar a començar?",
@@ -71,6 +72,7 @@ const I18N = {
     subtitle: "Boda Xavier & Meritxell · 25 de abril de 2026",
     btnContinue: "Continuar →",
     btnVideo: "Ver vídeo ▶",
+    btnAudio: "Escuchar audio 🔊",
     btnReset: "Volver a empezar",
     adminBanner: "MODO ORGANIZADORES",
     pageUnavailable: "Página no disponible",
@@ -80,7 +82,7 @@ const I18N = {
 
     // Section 2
     crosswordTitle: "Resolved el crucigrama",
-    crosswordIntro: "Fijaos bien en todos los detalles.",
+    crosswordIntro: "Fijaos bien en todos los detalles. Tenéis el crucigrama en formato físico para facilitaros la tarea. Si os atascáis, pulsad 🔍 junto a cada definición para obtener una pista.",
     cluesHorizontal: "HORIZONTALES",
     cluesVertical: "VERTICALES",
     legendGreen: "Verde",
@@ -109,7 +111,7 @@ const I18N = {
     victoryFooter: "¡Gracias por jugar! ❤️💍",
 
     // Modals
-    confirmStep1: "¿Ya habéis visto el vídeo que os han dejado los sospechosos?",
+    confirmStep1: "¿Ya habéis escuchado o visto el mensaje que os han dejado los sospechosos?",
     confirmStep2: "¿Habéis acabado el crucigrama y sabéis qué esconden las casillas de color?",
     confirmStep3: "¿Os habéis fijado bien en todos los detalles de las cámaras? ¿Ya sabéis qué muestran?",
     confirmReset: "¿Seguro que queréis volver a empezar?",
